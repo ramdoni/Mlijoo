@@ -11,7 +11,7 @@ class Login extends Component
     public $username;
     public $password;
     public $message;
-    public $token;
+    public $token,$remember_me=true;
 
     public function render()
     {

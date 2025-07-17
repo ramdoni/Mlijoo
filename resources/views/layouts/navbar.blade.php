@@ -58,7 +58,6 @@
                             <li><a href="{{route('kasir.index')}}" class="text-info icon-menu px-1">Dashboard</a></li>
                             <li><a href="{{ route('product-supplier.index') }}" class="text-info icon-menu px-1">Produk</a></li>
                             <li><a href="{{ route('purchase-order-supplier.index') }}" class="text-info icon-menu px-1">Purchase Order</a></li>
-                          
                             <!-- <li><a href="{{route('kasir.index')}}" class="text-info icon-menu px-1">Kasir</a></li> -->
                         @endif
                     </ul>

@@ -5,11 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class UserPlatinum extends Model
+class UserAccess extends Model
 {
     use HasFactory;
 
-    protected $table = 'users';
-
-    protected $connection = 'platinum';
+    protected $table = 'user_access';
 }

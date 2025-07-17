@@ -10,7 +10,6 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 // use Laravel\Sanctum\HasApiTokens;
 use Laravel\Passport\HasApiTokens;
-use App\Models\UserMember;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 
 class User extends Authenticatable implements JWTSubject
@@ -70,11 +69,6 @@ class User extends Authenticatable implements JWTSubject
     public function koordinator()
     {
         return $this->hasOne('App\Models\Koordinator','user_id','id');
-    }
-
-    public function member()
-    {
-        return $this->hasOne(UserMember::class,'user_id','id');
     }
 
      /**
