@@ -1,0 +1,30 @@
+networks:
+  default:
+    name: goodang-network
+
+volumes:
+  goodang-mysql:
+    name: goodang-mysql
+
+services:
+  php:
+    build: .
+    ports:
+      - 80:80
+    volumes:
+      - ./000-default.conf:/etc/apache2/sites-available/000-default.conf
+      - .:/var/www
+    restart: always
+  db:
+    container_name: db
+    image: mariadb:10
+    environment:
+      MARIADB_ROOT_PASSWORD: ${DB_PASSWORD}
+      MARIADB_DATABASE: ${DB_DATABASE}
+      MARIADB_USER: ${DB_USERNAME}
+      MARIADB_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - 3306:3306
+    volumes:
+      - goodang-mysql:/var/lib/mysql
+    restart: always
