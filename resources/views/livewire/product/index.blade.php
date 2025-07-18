@@ -101,9 +101,8 @@
                                             </a>
                                         @endif
                                     </td>
-                                    <!-- <td class="text-center">{{isset($item->reseller->nama) ? $item->reseller->nama : '-'}}</td> -->
-                                    <td><a href="{{route('product.detail',$item->id)}}">{{$item->kode_produksi}}</a></td>
-                                    <td><a href="{{route('product.detail',$item->id)}}">{{$item->keterangan}}</a></td>
+                                    <td><a href="{{route('product.edit',$item->id)}}">{{$item->kode_produksi}}</a></td>
+                                    <td><a href="{{route('product.edit',$item->id)}}">{{$item->keterangan}}</a></td>
                                     <td>@livewire('product.editable',['field'=>'product_uom_id','data'=>(isset($item->uom->name) ? $item->uom->name : ''),'id'=>$item->id],key('uom'.$item->id))</td>
                                     <td class="text-center">@livewire('product.editable',['field'=>'qty','data'=>$item->qty,'id'=>$item->id],key('qty'.$item->id))</td>
                                     <td class="text-center">{{$item->qty_moving}}</td>

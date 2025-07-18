@@ -10,23 +10,19 @@
         <meta name="description" content="@yield('meta_description', config('app.name'))">
         <meta name="author" content="@yield('meta_author', config('app.name'))">
         @yield('meta')
-
         {{-- See https://laravel.com/docs/5.5/blade#stacks for usage --}}
         @stack('before-styles')
-
         <link rel="stylesheet" href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/vendor/font-awesome/css/font-awesome.min.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/vendor/jvectormap/jquery-jvectormap-2.0.3.min.css') }}"/>
         <link rel="stylesheet" href="{{ asset('assets/vendor/morrisjs/morris.min.css') }}" />
         <link rel="stylesheet" href="{{ asset('assets/vendor/toastr/toastr.min.css') }}"/>
-
         <!-- Custom Css --> 
         <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}?v=1">
         <link rel="stylesheet" href="{{ asset('assets/css/color_skins.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/custom.css').(env('APP_DEBUG')==true?'?date='.date('YmdHis') : '') }}">
         <script src="{{ asset('js/alpine.min.js') }}" defer></script>
         @stack('after-styles')
-
         @if (trim($__env->yieldContent('page-styles')))
             @yield('page-styles')
         @endif
